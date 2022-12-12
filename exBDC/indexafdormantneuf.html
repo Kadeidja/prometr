@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stylebdc.css">
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <script src="js/html2pdfbyekoopman.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <title>BON DE COMMANDE</title>
+    
+</head>
+<body>
+    <h4>Pour obtenir un bon de commande:
+    </h4>
+    <form action="">
+        <fieldset>
+        <legend>Obtenir un Bon De Commande</legend>
+    <!-- <select name="" id="selectedFournisseur"> -->
+        <label for="">BELM</label>
+        <input type="radio" name="BELM" id="" class="selectF" value="BELM" onclick="showBDC(0)">
+        <label for="">ART & FENÊTRE</label>
+        <input type="radio" name="ART & FENÊTRE" id="" class="selectF" value="AF" onclick="showBDC(1)">
+        <label for="">BAIE BLEU</label>
+        <input type="radio" name="BAIE BLEU" id="" class="selectF" value="BAIEBLEU" onclick="showBDC(2)">
+        <!-- <option class="selectF" value="BELM">BELM</option> -->
+        <!-- <option class="selectF" value="AF">ART & FENÊTRE</option> -->
+        <!-- <option class="selectF" value="BAIEBLEU">BAIE BLEU</option> -->
+    <!-- </select> -->
+    <button class="closeBtn" onclick="closeBDC()">FERMER LE BON DE COMMANDE</button>
+        </fieldset>
+    </form>
+
+<!--TABLEAU ___________________________________________ATTENTION VERIFIER GENERATEUR invvoice has changed name__     ______________________________  -->
+<div class="tableauBDC" id="AF">
+    <form action="index.html" method="get"> 
+<h1>VERSION TABLEAU</h1>
+    <table id="bdcArtFenetre">
+        <tr id="tFirstline">
+            <td colspan="19">FOURNISSEUR
+                <div>ART & FENETRES </div>
+            </td>
+            <td colspan="30">CLIENT
+                <label>Information Client</label>
+                <input type="text" name="" id="">
+                <div>
+                    <p>Personne à conacter:</p>
+                    <label for="">Nom et Prénom</label>
+                    <input type="text" name="" id="">
+                    <label>Numéro </label>
+                    <input type="number" name="" id="">
+                    <label for=""> Date :</label>
+                    <input type="datetime" name="" id="">
+                </div>
+            </td>
+            <td colspan="8">DELAI
+                <input type="text" name="" id="">
+            </td>
+            <td colspan="31">
+                <p>SIGNATURE</p>
+                <div class="flex-row">
+                    <div class="wrapper">
+                        <canvas id="signatureNote" width="150" height="50"></canvas>
+                    </div>
+                    <div class="clear-btn">
+                        <button id="clear"><span> EFFACER </span></button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr id="tSecondline">
+            <td colspan="19">COMMANDE
+                <div>
+                    <label for="">Réf:</label>
+                    <input type="text">
+                </div>
+            </td>
+            <td colspan="13">DORMANT NEUF
+            </td>
+            <td colspan="17">MATIERES</td>
+            <td colspan="29">GAMME
+                <div>
+                    <div>
+                        <input type="checkbox" id="" name="">
+                        <label for="">Essentielle 70</label> 
+                    </div>
+                    <div>
+                        <input type="checkbox" id="" name="">
+                        <label for="">Sérénité 70</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="" name="">
+                        <label for="">Plénitude 70</label>
+                    </div>
+                </div>
+                    
+            </td>
+            <td colspan="10">N° DE PAGE
+                <input type="number" name="" id="">
+            </td>
+        </tr>
+        <tr id="tThirdLine">
+            <th class="heardUndertbl" rowspan="4">Repère</th>
+            <th class="heardUndertbl" rowspan="4">Quantité</th>
+            <th class="heardUndertbl" rowspan="4">Type de Menuiserie</th>
+            <th class="heardUndertbl" rowspan="2" colspan="2">Côtes</th>
+            <th class="heardUndertbl" rowspan="4">Type de pose</th>
+            <th class="heardUndertbl" rowspan="4">Hauteur d'allège Maçonnerie</th>
+            <th class="heardUndertbl" rowspan="4">Type de Dormant</th>
+            <th class="heardUndertbl" rowspan="4">Appui large</th>
+            <th class="heardUndertbl" rowspan="4">Seuil Alu</th>
+            <th class="heardUndertbl" colspan="2">TVR</th>
+            <th class="heardUndertbl" rowspan="4">Tapées Persiennes cote entre tapées</th>
+            <th class="heardUndertbl" rowspan="2">Soubassement Traverse</th>
+            <th class="heardUndertbl" rowspan="4">Serrure</th>
+            <th class="heardUndertbl" rowspan="4">HT Imposte ou HT Allège Fixe</th>
+            <th class="heardUndertbl" rowspan="3">Petit Bois (Nombre par Vantail)</th>
+            <th class="heardUndertbl">VMC</th>
+            <th class="heardUndertbl">VITRAGE</th>
+            <th class="heardUndertbl">VR Incorporé</th>
+            <th class="heardUndertbl" rowspan="4">Remarques</th>
+        </tr>
+        <tr id="tFourthLine">
+            <th class="heardUndertbl" rowspan="3">Coffre Tunnel</th>
+            <th class="heardUndertbl" rowspan="3">Coffre Tradi</th>
+            <th class="heardUndertbl">10</th>
+            <th class="heardUndertbl">11</th>
+            <th class="heardUndertbl">12</th>
+            <th class="heardUndertbl">13</th>
+            <th class="heardUndertbl">14</th>
+            <th class="heardUndertbl">15</th>
+            <th class="heardUndertbl">16</th>
+            <th class="heardUndertbl">17</th>
+            <th class="heardUndertbl">17.1</th>
+            <th class="heardUndertbl">17.2</th>
+            <th class="heardUndertbl" rowspan="3">Aéraulique 15, 22, 30 m3/h</th>
+            <th class="heardUndertbl" rowspan="3"> à Débit réglable</th>
+            <th class="heardUndertbl" rowspan="3">Phonique 38 db(A)</th>
+            <th class="heardUndertbl" rowspan="3">Phonique 42 db(A)</th>
+            <th class="heardUndertbl" rowspan="3">Hygro réglable</th>
+            <th class="heardUndertbl" rowspan="3">Mortaise Seule</th>
+            <th class="heardUndertbl" rowspan="3">COMPOSITION ITR + GAZ Intercalaire Noir</th>
+            <th class="heardUndertbl" rowspan="3">Warm Edge</th>
+            <th class="heardUndertbl" rowspan="3">Clair</th>
+            <th class="heardUndertbl" rowspan="3">Granité 200</th>
+            <th class="heardUndertbl" rowspan="3">Coffre BBDL</th>
+            <th class="heardUndertbl" rowspan="3">Coffre S762+</th>
+            <th class="heardUndertbl" rowspan="3">Type Tablier</th>
+            <th class="heardUndertbl" rowspan="3">Manoeuvre</th>
+            <th class="heardUndertbl" rowspan="3">Coté Manoeuvre</th>
+            <th class="heardUndertbl" rowspan="3">Code Position</th>
+            <th class="heardUndertbl">25</th>
+        </tr>
+
+        <tr id="tFifthLine">
+            <th class="heardUndertbl" rowspan="2">ht mm</th>
+            <th class="heardUndertbl" rowspan="2">Lg mm</th>
+            <th class="heardUndertbl">6 sup</th>
+            <th class="heardUndertbl">7 sup</th>
+            <th class="heardUndertbl">8</th>
+            <th class="heardUndertbl">8.1</th>
+            <th class="heardUndertbl">9 sup</th>
+            <th class="heardUndertbl">9.1 sup</th>
+            <th class="heardUndertbl">10</th>
+            <th class="heardUndertbl">11</th>
+            <th class="heardUndertbl">Code</th>
+            <th class="heardUndertbl">Hauteur Dessus Traverse</th>
+            <th class="heardUndertbl">14</th>
+            <th class="heardUndertbl">15</th>
+            <th class="heardUndertbl">16</th>
+            <th class="heardUndertbl">17</th>
+            <th class="heardUndertbl">17.1</th>
+            <th class="heardUndertbl">17.2</th>
+            <th class="heardUndertbl">18</th>
+            <th class="heardUndertbl">18.1</th>
+            <th class="heardUndertbl">18.2</th>
+            <th class="heardUndertbl">18.3</th>
+            <th class="heardUndertbl">18.4</th>
+            <th class="heardUndertbl">18.5</th>
+            <th class="heardUndertbl">19</th>
+            <th class="heardUndertbl">19.1</th>
+            <th class="heardUndertbl">19.2</th>
+            <th class="heardUndertbl">19.3</th>
+            <th class="heardUndertbl">20</th>
+            <th class="heardUndertbl">20.1</th>
+            <th class="heardUndertbl">21</th>
+            <th class="heardUndertbl">22</th>
+            <th class="heardUndertbl">23</th>
+            <th class="heardUndertbl">24</th>
+            <th class="heardUndertbl">25</th>
+        </tr>
+        <tr id="tSixthLine">
+            <th class="heardUndertbl">Code</th>
+            <th class="heardUndertbl">H</th>
+            <th class="heardUndertbl">V</th>
+        </tr>
+        <tr id="tSeventhLine">
+            <th class="heardUndertbl">1</th>
+            <th class="heardUndertbl">2</th>
+            <th class="heardUndertbl">3</th>
+            <th class="heardUndertbl" colspan="2">4</th>
+            <th class="heardUndertbl">5</th>
+            <th class="heardUndertbl">6</th>
+            <th class="heardUndertbl">7</th>
+            <th class="heardUndertbl" colspan="2">8</th>
+            <th class="heardUndertbl" colspan="2">9</th>
+            <th class="heardUndertbl">10</th>
+            <th class="heardUndertbl">11</th>
+            <th class="heardUndertbl">12</th>
+            <th class="heardUndertbl">13</th>
+            <th class="heardUndertbl">14</th>
+            <th class="heardUndertbl">15</th>
+            <th class="heardUndertbl">16</th>
+            <th class="heardUndertbl">17</th>
+            <th class="heardUndertbl">18</th>
+            <th class="heardUndertbl">19</th>
+            <th class="heardUndertbl">20</th>
+            <th class="heardUndertbl">21</th>
+            <th class="heardUndertbl">22</th>
+            <th class="heardUndertbl">23</th>
+            <th class="heardUndertbl">24</th>
+            <th class="heardUndertbl">25</th>
+            <th class="heardUndertbl">26</th>
+            <th class="heardUndertbl">27</th>
+            <th class="heardUndertbl">28</th>
+            <th class="heardUndertbl">29</th>
+            <th class="heardUndertbl">30</th>
+            <th class="heardUndertbl">31</th>
+            <th class="heardUndertbl">32</th>
+            <th class="heardUndertbl">33</th>
+            <th class="heardUndertbl">34</th>
+            <th class="heardUndertbl">35</th>
+            <th class="heardUndertbl">36</th>
+            <th class="heardUndertbl">37</th>
+            <th class="heardUndertbl">38</th>
+            <th class="heardUndertbl">39</th>
+            <th class="heardUndertbl">40</th>
+            <th class="heardUndertbl">41</th>
+            <th class="heardUndertbl">42</th>
+            <th class="heardUndertbl">43</th>
+            <th class="heardUndertbl">44</th>
+            <th class="heardUndertbl">45</th>
+            <th class="heardUndertbl">46</th>
+            <th class="heardUndertbl">47</th>
+            <th class="heardUndertbl">48</th>
+            <th class="heardUndertbl">49</th>
+            <th class="heardUndertbl">50</th>
+            <th class="heardUndertbl">51</th>
+            <th class="heardUndertbl">52</th>
+            <th class="heardUndertbl">53</th>
+            <th class="heardUndertbl">54</th>
+            <th class="heardUndertbl">55</th>
+            <th class="heardUndertbl">56</th>
+            <th class="heardUndertbl">57</th>
+            <th class="heardUndertbl">58</th>
+            <th class="heardUndertbl">59</th>
+            <th class="heardUndertbl">60</th>
+            <th class="heardUndertbl">61</th>
+            <th class="heardUndertbl">62</th>
+            <th class="heardUndertbl">63</th>
+            <th class="heardUndertbl">64</th>
+            <th class="heardUndertbl">65</th>
+            <th class="heardUndertbl">66</th>
+            <th class="heardUndertbl">67</th>
+            <th class="heardUndertbl">68</th>
+            <th class="heardUndertbl">69</th>
+            <th class="heardUndertbl">70</th>
+            <th class="heardUndertbl">71</th>
+            <th class="heardUndertbl">72</th>
+            <th class="heardUndertbl">73</th>
+            <th class="heardUndertbl">74</th>
+            <th class="heardUndertbl">75</th>
+            <th class="heardUndertbl">76</th>
+            <th class="heardUndertbl">77</th>
+            <th class="heardUndertbl">78</th>
+            <th class="heardUndertbl">79</th>
+            <th class="heardUndertbl">80</th>
+            <th class="heardUndertbl">81</th>
+            <th class="heardUndertbl">82</th>
+            <th class="heardUndertbl">83</th>
+            <th class="heardUndertbl">84</th>
+            <th class="heardUndertbl">85</th>
+            <th class="heardUndertbl">86</th>
+            <th class="heardUndertbl">87</th>
+            <th class="heardUndertbl">88</th>
+        </tr>  
+    </table>
+    <!-- <button id="genererBDC" type="submit" onclick="generatePDF()">ENVOYER</button> -->
+</form>
+</div>
+<button id="genererBDCAF" class="genererBDC" type="submit" onclick="generatePDF('AF')">GENERER PDF BDC D'ART et FENETRES</button>
+<!-- <button class="closeBtn" id="AFclose" onclick="closeBDC(1)">FERMER</button> -->
+
+
+
+<!-- Library HTML to CANVAS/PDF -->
+<script src="js/html2canvas.min.js"></script>
+<!-- Library pour espace signature -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.3.5/signature_pad.min.js" integrity="sha512-kw/nRM/BMR2XGArXnOoxKOO5VBHLdITAW00aG8qK4zBzcLVZ4nzg7/oYCaoiwc8U9zrnsO9UHqpyljJ8+iqYiQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Library pour jsPDF -->
+<script src="https://unpkg.com/jspdf-invoice-template@1.4.0/dist/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+<!-- Library autre pour html2pdf le laisser en haut-->
+<!-- Library pour html2pdf -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- <script src="js/scriptbdc.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,51 @@
+.flex-row {
+    display: flex;
+}
+
+canvas#signatureNote {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+}
+button#clear {
+    height: 100%;
+    border: 1px solid transparent;
+    color: #000;
+    font-weight: 200;
+    cursor: pointer;
+}
+button#clear span {
+    transform: rotate(90deg);
+    display: block;
+}
+/**/
+
+#divmatierechoix {
+    width: 30vw;
+}
+#divmatierechoix>div{
+display: inline-flex;
+}
+
+#detailedQuestions{
+    width: 100%;
+    max-width: 65vw;
+    overflow: wrap;
+}
+
+#detailedQuestions > fieldset > ol{
+    width: 100%;
+    max-width: 65vw;
+    display: flex;
+    list-style: none;
+}
+#detailedQuestions > fieldset > ol > li > fieldset{
+    display: inline;
+}
+#groupMatieres{
+    display: inline-flex;
+}
+#bdcbaieBleu, tr, td, th {
+    border: solid rgb(0, 0, 0);
+}

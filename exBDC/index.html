@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stylebdc.css">
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <script src="js/html2pdfbyekoopman.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <title>BON DE COMMANDE</title>
+    
+</head>
+<body>
+    <h4>Pour obtenir un bon de commande:
+    </h4>
+    <form action="">
+        <fieldset>
+        <legend>Obtenir un Bon De Commande</legend>
+    <!-- <select name="" id="selectedFournisseur"> -->
+        <label for="">BELM</label>
+        <input type="radio" name="BELM" id="" class="selectF" value="BELM" onclick="showBDC(0)">
+        <label for="">ART & FENÊTRE</label>
+        <input type="radio" name="ART & FENÊTRE" id="" class="selectF" value="AF" onclick="showBDC(1)">
+        <label for="">BAIE BLEU</label>
+        <input type="radio" name="BAIE BLEU" id="" class="selectF" value="BAIEBLEU" onclick="showBDC(2)">
+        <!-- <option class="selectF" value="BELM">BELM</option> -->
+        <!-- <option class="selectF" value="AF">ART & FENÊTRE</option> -->
+        <!-- <option class="selectF" value="BAIEBLEU">BAIE BLEU</option> -->
+    <!-- </select> -->
+    <button class="closeBtn" onclick="closeBDC()">FERMER LE BON DE COMMANDE</button>
+        </fieldset>
+    </form>
+
+<!--TABLEAU ___________________________________________ATTENTION VERIFIER GENERATEUR invvoice has changed name__     ______________________________  -->
+<div class="tableauBDC" id="BELM">
+    <form action="index.html" method="get"> 
+<h1>VERSION TABLEAU</h1>
+    <table id="bdcArtFenetre">
+        <tr id="tFirstline">
+            <td colspan="4">FOURNISSEUR
+                <div> BELM</div>
+            </td>
+            <td colspan="16">CLIENT
+                <label>Information Client</label>
+                <input type="text" name="" id="">
+                <div>
+                    <p>Personne à conacter:</p>
+                    <label for="">Nom et Prénom</label>
+                    <input type="text" name="" id="">
+                    <label>Numéro </label>
+                    <input type="number" name="" id="">
+                    <label for=""> Date :</label>
+                    <input type="datetime" name="" id="">
+                </div>
+            </td>
+            <td colspan="5">DELAI
+                <input type="text" name="" id="">
+            </td>
+            <td colspan="8">
+                <p>SIGNATURE</p>
+                <div class="flex-row">
+                    <div class="wrapper">
+                        <canvas id="signatureNote" width="150" height="50"></canvas>
+                    </div>
+                    <div class="clear-btn">
+                        <button id="clear"><span> EFFACER </span></button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr id="tSecondline">
+            <td colspan="4">COMMANDE
+                <div>
+                    <label for="">Réf:</label>
+                    <input type="text">
+                </div>
+            </td>
+            <td colspan="23">MATIERE
+                <div id="groupMatieres">
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Blanc</label>
+                        </div>
+                        <div class="matiereChoix">
+                            <input type="checkbox" id="" name="">
+                            <label for="">Gris 7047 Teinté dans la masse</label>
+                        </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Chêne doré 2 faces</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Chêne doré 1 face int.</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Chêne doré 1 face ext.</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Acajou 1 face ext.</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Gris Anthracite Mat (7106) 2 faces</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Gris Anthracite Mat (7106) 1 face ext.</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Gris argent</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Rouge foncé</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Bleu Acier</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Gris Basalte</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Chêne naturel 2</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Chêne naturel 1 face int</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Chêne naturel 1 face ext</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Blanc Texturé 2 faces</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Blanc Texturé 1 face int.</label> 
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Noir brun mat 1 face int</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Noyer 1 face ext</label>
+                    </div>
+                </div>
+            </td>
+            <td colspan="4">GAMME
+                <div>
+                    <div>
+                        <input type="checkbox" id="" name="">
+                        <label for="">Essentielle 70</label> 
+                    </div>
+                    <div>
+                        <input type="checkbox" id="" name="">
+                        <label for="">Sérénité 70</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="" name="">
+                        <label for="">Plénitude 70</label>
+                    </div>
+                </div>
+                    
+            </td>
+            <td colspan="2">N° DE PAGE
+                <input type="number" name="" id="">
+            </td>
+        </tr>
+        <tr id="tThirdLine">
+            <th class="heardUndertbl" rowspan="3">Repère</th>
+            <th class="heardUndertbl" rowspan="3">Quantité</th>
+            <th class="heardUndertbl" rowspan="3">Type de Menuiserie</th>
+            <th class="heardUndertbl" colspan="2" rowspan="2">
+                Type de côtes
+                <div>
+                    <div>
+                        <input type="checkbox" name="" id="">
+                        <label for="">Passage</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="" id="">
+                        <label for="">Fabrication</label>
+                    </div>
+                    <p>(Ailes non comprises)</p>
+                </div>
+            </th><!--colspan2-->
+            <th class="heardUndertbl" rowspan="3">Hauteur d'Allège</th>
+            <th class="heardUndertbl" colspan="2" rowspan="2">Ailes de recouvrement intérieur</th>
+            <th class="heardUndertbl" rowspan="3">Appui Rapportés</th>
+            <th class="heardUndertbl" rowspan="3">Seuil Alu</th>
+            <th class="heardUndertbl" rowspan="3">Tapées persiennes cote entre tapées</th>
+            <th class="heardUndertbl" colspan="2"rowspan="2">Soubassement Traverse</th>
+            <th class="heardUndertbl" rowspan="3">Serrure</th>
+            <th class="heardUndertbl" rowspan="3">HT Imposte ou HT Allège Fixe</th>
+            <th class="heardUndertbl" colspan="3" rowspan="2">Petit Bois</th>
+            <th class="heardUndertbl" colspan="6">VMC</th>
+            <th class="heardUndertbl" colspan="4">VITRAGE</th>
+            <th class="heardUndertbl" colspan="4">VR incorporé</th>
+            <th class="heardUndertbl">Remarques</th>
+        </tr>
+        <tr>
+            <td rowspan="2">Aéraulique 15,22 ou 30 m3/h</td>
+            <td rowspan="2">A débit réglable</td>
+            <td rowspan="2">Phonique 38dB(A)</td>
+            <td rowspan="2">Phonique 42dB(A)</td>
+            <td rowspan="2">Hydro réglable</td>
+            <td rowspan="2">Mortaise seule</td>
+            <td rowspan="2">Composition itr + Gaz intercalaire noir</td>
+            <td rowspan="2">Warm Edge</td>
+            <td rowspan="2">Clair</td>
+            <td rowspan="2">Granité 200</td>
+            <td rowspan="2">Coffre S762</td>
+            <td rowspan="2">Type Tablier</td>
+            <td rowspan="2">Manoeuvre</td>
+            <td rowspan="2">Côté Manoeuvre</td>
+            <td rowspan="3">
+                <input type="text" name="" id="">
+            </td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>Hauteur mm</td>
+            <td>Largeur mm</td>
+            <td>Haut et Côtés</td>
+            <td>Bas</td>
+            <td>Code</td>
+            <td>Hauteur Dessus Traverse</td>
+            <td>Code</td>
+            <td>H</td>
+            <td>V</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+            <td colspan="2">17</td>
+            <td colspan="6">18</td>
+            <td colspan="4">19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td>25</td>
+        </tr>
+           
+    </table>
+    <!-- <button id="genererBDC" type="submit" onclick="generatePDF()">ENVOYER</button> -->
+</form>
+</div>
+<button id="genererBELM" class="genererBDC" type="submit" onclick="generatePDF('BELM')">GENERER PDF BDC BELM</button>
+<!-- <button class="closeBtn" id="BELMclose" onclick="closeBDC(0)">FERMER</button> -->
+
+<!-- CREER DES BOUTONS POUR PERMETTRE DE GENERER LES AUTRES FICHES A PARTIR DE CELLE CI OU DE LA DIRECTIVE DE POSE-->
+<div class="tableauBDC" id="AF">
+    <form action="index.html" method="get"> 
+<h1>VERSION TABLEAU</h1>
+    <table id="bdcArtFenetre">
+        <tr id="tFirstline">
+            <td colspan="4">FOURNISSEUR
+                <div>ART & FENETRES </div>
+            </td>
+            <td colspan="16">CLIENT
+                <label>Information Client</label>
+                <input type="text" name="" id="">
+                <div>
+                    <p>Personne à conacter:</p>
+                    <label for="">Nom et Prénom</label>
+                    <input type="text" name="" id="">
+                    <label>Numéro </label>
+                    <input type="number" name="" id="">
+                    <label for=""> Date :</label>
+                    <input type="datetime" name="" id="">
+                </div>
+            </td>
+            <td colspan="5">DELAI
+                <input type="text" name="" id="">
+            </td>
+            <td colspan="8">
+                <p>SIGNATURE</p>
+                <div class="flex-row">
+                    <div class="wrapper">
+                        <canvas id="signatureNote" width="150" height="50"></canvas>
+                    </div>
+                    <div class="clear-btn">
+                        <button id="clear"><span> EFFACER </span></button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr id="tSecondline">
+            <td colspan="4">COMMANDE
+                <div>
+                    <label for="">Réf:</label>
+                    <input type="text">
+                </div>
+            </td>
+            <td colspan="23">MATIERE
+                <div id="groupMatieres">
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Blanc</label>
+                        </div>
+                        <div class="matiereChoix">
+                            <input type="checkbox" id="" name="">
+                            <label for="">Gris 7047 Teinté dans la masse</label>
+                        </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Chêne doré 2 faces</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Chêne doré 1 face int.</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Chêne doré 1 face ext.</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Acajou 1 face ext.</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Gris Anthracite Mat (7106) 2 faces</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Gris Anthracite Mat (7106) 1 face ext.</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Gris argent</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Rouge foncé</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Bleu Acier</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Gris Basalte</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Chêne naturel 2</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Chêne naturel 1 face int</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Chêne naturel 1 face ext</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Blanc Texturé 2 faces</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Blanc Texturé 1 face int.</label> 
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Noir brun mat 1 face int</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Noyer 1 face ext</label>
+                    </div>
+                </div>
+            </td>
+            <td colspan="4">GAMME
+                <div>
+                    <div>
+                        <input type="checkbox" id="" name="">
+                        <label for="">Essentielle 70</label> 
+                    </div>
+                    <div>
+                        <input type="checkbox" id="" name="">
+                        <label for="">Sérénité 70</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="" name="">
+                        <label for="">Plénitude 70</label>
+                    </div>
+                </div>
+                    
+            </td>
+            <td colspan="2">N° DE PAGE
+                <input type="number" name="" id="">
+            </td>
+        </tr>
+        <tr id="tThirdLine">
+            <th class="heardUndertbl" rowspan="3">Repère</th>
+            <th class="heardUndertbl" rowspan="3">Quantité</th>
+            <th class="heardUndertbl" rowspan="3">Type de Menuiserie</th>
+            <th class="heardUndertbl" colspan="2" rowspan="2">
+                Type de côtes
+                <div>
+                    <div>
+                        <input type="checkbox" name="" id="">
+                        <label for="">Passage</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="" id="">
+                        <label for="">Fabrication</label>
+                    </div>
+                    <p>(Ailes non comprises)</p>
+                </div>
+            </th><!--colspan2-->
+            <th class="heardUndertbl" rowspan="3">Hauteur d'Allège</th>
+            <th class="heardUndertbl" colspan="2" rowspan="2">Ailes de recouvrement intérieur</th>
+            <th class="heardUndertbl" rowspan="3">Appui Rapportés</th>
+            <th class="heardUndertbl" rowspan="3">Seuil Alu</th>
+            <th class="heardUndertbl" rowspan="3">Tapées persiennes cote entre tapées</th>
+            <th class="heardUndertbl" colspan="2"rowspan="2">Soubassement Traverse</th>
+            <th class="heardUndertbl" rowspan="3">Serrure</th>
+            <th class="heardUndertbl" rowspan="3">HT Imposte ou HT Allège Fixe</th>
+            <th class="heardUndertbl" colspan="3" rowspan="2">Petit Bois</th>
+            <th class="heardUndertbl" colspan="6">VMC</th>
+            <th class="heardUndertbl" colspan="4">VITRAGE</th>
+            <th class="heardUndertbl" colspan="4">VR incorporé</th>
+            <th class="heardUndertbl">Remarques</th>
+        </tr>
+        <tr>
+            <td rowspan="2">Aéraulique 15,22 ou 30 m3/h</td>
+            <td rowspan="2">A débit réglable</td>
+            <td rowspan="2">Phonique 38dB(A)</td>
+            <td rowspan="2">Phonique 42dB(A)</td>
+            <td rowspan="2">Hydro réglable</td>
+            <td rowspan="2">Mortaise seule</td>
+            <td rowspan="2">Composition itr + Gaz intercalaire noir</td>
+            <td rowspan="2">Warm Edge</td>
+            <td rowspan="2">Clair</td>
+            <td rowspan="2">Granité 200</td>
+            <td rowspan="2">Coffre S762</td>
+            <td rowspan="2">Type Tablier</td>
+            <td rowspan="2">Manoeuvre</td>
+            <td rowspan="2">Côté Manoeuvre</td>
+            <td rowspan="3">
+                <input type="text" name="" id="">
+            </td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>Hauteur mm</td>
+            <td>Largeur mm</td>
+            <td>Haut et Côtés</td>
+            <td>Bas</td>
+            <td>Code</td>
+            <td>Hauteur Dessus Traverse</td>
+            <td>Code</td>
+            <td>H</td>
+            <td>V</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+            <td colspan="2">17</td>
+            <td colspan="6">18</td>
+            <td colspan="4">19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td>25</td>
+        </tr>
+           
+    </table>
+    <!-- <button id="genererBDC" type="submit" onclick="generatePDF()">ENVOYER</button> -->
+</form>
+</div>
+<button id="genererBDCAF" class="genererBDC" type="submit" onclick="generatePDF('AF')">GENERER PDF BDC D'ART et FENETRES</button>
+<!-- <button class="closeBtn" id="AFclose" onclick="closeBDC(1)">FERMER</button> -->
+
+<div class="tableauBDC" id="BAIEBLEU">
+    <form action="index.html" method="get"> 
+<h1>VERSION TABLEAU</h1>
+    <table id="bdcbaieBleu">
+        <tr id="tFirstline">
+            <td colspan="4">FOURNISSEUR
+                    <div> BAIE BLEU</div>
+            </td>
+            <td colspan="16">CLIENT
+                <label>Information Client</label>
+                <input type="text" name="" id="">
+                <div>
+                    <p>Personne à conacter:</p>
+                    <label for="">Nom et Prénom</label>
+                    <input type="text" name="" id="">
+                    <label>Numéro </label>
+                    <input type="number" name="" id="">
+                    <label for=""> Date :</label>
+                    <input type="datetime" name="" id="">
+                </div>
+            </td>
+            <td colspan="5">DELAI
+                <input type="text" name="" id="">
+            </td>
+            <td colspan="8">
+                <p>SIGNATURE</p>
+                <div class="flex-row">
+                    <div class="wrapper">
+                        <canvas id="signatureNote" width="150" height="50"></canvas>
+                    </div>
+                    <div class="clear-btn">
+                        <button id="clear"><span> EFFACER </span></button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr id="tSecondline">
+            <td colspan="4">COMMANDE
+                <div>
+                    <label for="">Réf:</label>
+                    <input type="text">
+                </div>
+            </td>
+            <td colspan="23">MATIERE
+                <div id="groupMatieres">
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Blanc</label>
+                        </div>
+                        <div class="matiereChoix">
+                            <input type="checkbox" id="" name="">
+                            <label for="">Gris 7047 Teinté dans la masse</label>
+                        </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Chêne doré 2 faces</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Chêne doré 1 face int.</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Chêne doré 1 face ext.</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Acajou 1 face ext.</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Gris Anthracite Mat (7106) 2 faces</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Gris Anthracite Mat (7106) 1 face ext.</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Gris argent</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Rouge foncé</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Bleu Acier</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Gris Basalte</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Chêne naturel 2</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Chêne naturel 1 face int</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Chêne naturel 1 face ext</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Blanc Texturé 2 faces</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Blanc Texturé 1 face int.</label> 
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Noir brun mat 1 face int</label>
+                    </div>
+                    <div class="matiereChoix">
+                        <input type="checkbox" id="" name="">
+                        <label for="">Noyer 1 face ext</label>
+                    </div>
+                </div>
+            </td>
+            <td colspan="4">GAMME
+                <div>
+                    <div>
+                        <input type="checkbox" id="" name="">
+                        <label for="">Essentielle 70</label> 
+                    </div>
+                    <div>
+                        <input type="checkbox" id="" name="">
+                        <label for="">Sérénité 70</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="" name="">
+                        <label for="">Plénitude 70</label>
+                    </div>
+                </div>
+                    
+            </td>
+            <td colspan="2">N° DE PAGE
+                <input type="number" name="" id="">
+            </td>
+        </tr>
+        <tr id="tThirdLine">
+            <th class="heardUndertbl" rowspan="3">Repère</th>
+            <th class="heardUndertbl" rowspan="3">Quantité</th>
+            <th class="heardUndertbl" rowspan="3">Type de Menuiserie</th>
+            <th class="heardUndertbl" colspan="2" rowspan="2">
+                Type de côtes
+                <div>
+                    <div>
+                        <input type="checkbox" name="" id="">
+                        <label for="">Passage</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="" id="">
+                        <label for="">Fabrication</label>
+                    </div>
+                    <p>(Ailes non comprises)</p>
+                </div>
+            </th><!--colspan2-->
+            <th class="heardUndertbl" rowspan="3">Hauteur d'Allège</th>
+            <th class="heardUndertbl" colspan="2" rowspan="2">Ailes de recouvrement intérieur</th>
+            <th class="heardUndertbl" rowspan="3">Appui Rapportés</th>
+            <th class="heardUndertbl" rowspan="3">Seuil Alu</th>
+            <th class="heardUndertbl" rowspan="3">Tapées persiennes cote entre tapées</th>
+            <th class="heardUndertbl" colspan="2"rowspan="2">Soubassement Traverse</th>
+            <th class="heardUndertbl" rowspan="3">Serrure</th>
+            <th class="heardUndertbl" rowspan="3">HT Imposte ou HT Allège Fixe</th>
+            <th class="heardUndertbl" colspan="3" rowspan="2">Petit Bois</th>
+            <th class="heardUndertbl" colspan="6">VMC</th>
+            <th class="heardUndertbl" colspan="4">VITRAGE</th>
+            <th class="heardUndertbl" colspan="4">VR incorporé</th>
+            <th class="heardUndertbl">Remarques</th>
+        </tr>
+        <tr>
+            <td rowspan="2">Aéraulique 15,22 ou 30 m3/h</td>
+            <td rowspan="2">A débit réglable</td>
+            <td rowspan="2">Phonique 38dB(A)</td>
+            <td rowspan="2">Phonique 42dB(A)</td>
+            <td rowspan="2">Hydro réglable</td>
+            <td rowspan="2">Mortaise seule</td>
+            <td rowspan="2">Composition itr + Gaz intercalaire noir</td>
+            <td rowspan="2">Warm Edge</td>
+            <td rowspan="2">Clair</td>
+            <td rowspan="2">Granité 200</td>
+            <td rowspan="2">Coffre S762</td>
+            <td rowspan="2">Type Tablier</td>
+            <td rowspan="2">Manoeuvre</td>
+            <td rowspan="2">Côté Manoeuvre</td>
+            <td rowspan="3">
+                <input type="text" name="" id="">
+            </td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>Hauteur mm</td>
+            <td>Largeur mm</td>
+            <td>Haut et Côtés</td>
+            <td>Bas</td>
+            <td>Code</td>
+            <td>Hauteur Dessus Traverse</td>
+            <td>Code</td>
+            <td>H</td>
+            <td>V</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+            <td colspan="2">17</td>
+            <td colspan="6">18</td>
+            <td colspan="4">19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td>25</td>
+        </tr>
+           
+    </table>
+    <!-- <button id="genererBDC" type="submit" onclick="generatePDF()">ENVOYER</button> -->
+</form>
+</div>
+<button id="genererBDCBAIEBLEU" class="genererBDC" type="submit" onclick="generatePDF('BAIEBLEU')">GENERER PDF BDC BAI BLEU</button>
+<!-- <button class="closeBtn" id="BAIEBLEUclose" onclick="closeBDC(2)">FERMER</button> -->
+
+
+<!-- Library HTML to CANVAS/PDF -->
+<script src="js/html2canvas.min.js"></script>
+<!-- Library pour espace signature -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.3.5/signature_pad.min.js" integrity="sha512-kw/nRM/BMR2XGArXnOoxKOO5VBHLdITAW00aG8qK4zBzcLVZ4nzg7/oYCaoiwc8U9zrnsO9UHqpyljJ8+iqYiQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Library pour jsPDF -->
+<script src="https://unpkg.com/jspdf-invoice-template@1.4.0/dist/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+<!-- Library autre pour html2pdf le laisser en haut-->
+<!-- Library pour html2pdf -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/scriptbdc.js"></script>
+</body>
+</html>
