@@ -1,0 +1,22 @@
+/*ARBORESCENCE----------------------------------------------------------*/
+.sectiongroupStyle{
+    display: inline-block;
+    width: 45vw;
+    margin: 1vw;
+    justify-content: center;
+}
+div#bdcsection>.btnSpace, button#btnDMO{
+    display: block;
+}
+/* 
+div#bdcsection{
+    display: inline-flex;
+    width: 45vw;
+    margin: 1vw;
+}
+div#dmosection{
+    display: inline-flex;
+    width: 45vw;
+    margin: 1vw;
+}
+*/
