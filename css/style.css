@@ -1,13 +1,46 @@
 /*ARBORESCENCE----------------------------------------------------------*/
+body{
+    padding: 5px;
+    margin: 5px;
+    font-family: 'Roboto','Courier New', Courier, monospace;
+}
+#ttlLogo{
+    justify-content: center;
+    text-align: center;
+    font-weight: 700;
+    margin: 10px;
+}
 .sectiongroupStyle{
     display: inline-block;
     width: 45vw;
     margin: 1vw;
     justify-content: center;
 }
-div#bdcsection>.btnSpace, button#btnDMO{
+div#bdcsection>.btnSpace{
     display: block;
 }
+div#dmosection>.btnSpace{
+    display: block;
+}
+.btnSpace>button{
+    padding: 10px;
+    background-color: blue;
+    border: none;
+    border-radius: 10px;
+    box-shadow: rgb(83, 83, 83) 5px 5px 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+}
+select{
+    border: solid blue;
+    border-radius: 10px;
+    padding: 5px;
+}
+div{
+    margin: 5px;
+}
+
 /* 
 div#bdcsection{
     display: inline-flex;

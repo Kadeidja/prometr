@@ -5,13 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400&family=Raleway:wght@100;400;700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+        <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
     <link rel="stylesheet" href="css/style.css">
     <title>PROMETRE - ARBORESCENCE</title>
 </head>
 
 <body>
     <section>
-        <h1> </h1>
+        <div id="ttlLogo">
+<h1>PROMETRÉ </h1>
+        </div>
 
         <div id="bdcsection" class="sectiongroupStyle"> <!-- SECTION-->
             <div class="btnSpace">
@@ -117,9 +125,9 @@
             <div class="btnSpace">
                 <button id="btnDMO"> DIRECTIVE DE MISE EN OEUVRE </button>
             </div>
-
             <div id="dmofamillesProduct">
-                <label for="dmo-familles-de-produits">FAMILLES DE PRODUITS</label>
+                <h3>FAMILLES DE PRODUITS</h3>
+                <!--<label for="dmo-familles-de-produits">FAMILLES DE PRODUITS</label>-->
                 <select name="dmo-f-produits" id="dmo-familles-de-produits" class="dmofirstOption">
                     <option id="" value="">Choisir une famille </option>
                     <option id="" class="dmo-f-prod-option" value="Fenetres-Portes">FENETRES/PORTES</option>
@@ -133,38 +141,33 @@
                     <span id="spaceEssai"></span>
                 </div>
             </div>
-            <!--<div id="">-->
-            <div id="">
+            <div id="dmosubOptions">
                 <select name="" id="Fenetres-Portes" class="dmosuboptionOne"><!-- FENETRES/PORTES -->
                     <option value="">Choisir une pose</option>
                     <option value="pose-renovation-neuf">POSE RENOVATION / NEUF</option>
                     <option value="pose-renovation-dt-doublage">POSE NEUF / DT AVEC DOUBLAGE</option>
                     <option value="pose-dt-sans-doublage">POSE D.T SANS DOUBLAGE</option>
                 </select>
-            </div>
-            <div id="">
+            
                 <select name="" id="Volets-Battants" class="dmosuboptionOne"><!-- VOLETS BATTANTS -->
                     <option value="">Choisir une pose</option>
                     <option value="pose-gons-existant">POSE SUR GONDS EXISTANTS</option>
                     <option value="pose-nouveau-gonds">POSE SUR NOUVEAUX GONDS</option>
                     <option value="pose-precadre">POSE SUR PRECADRE</option>
                 </select>
-            </div>
-            <div id="">
+            
                 <select name="" id="Volets-Roulants" class="dmosuboptionOne"><!-- VOLETS ROULANTS -->
                     <option value="">Choisir un type</option>
                     <option value="bloc-renovation">BLOC RENOVATION</option>
                     <option value="traditionnel">TRADITIONNEL</option>
                 </select>
-            </div>
-            <div id="">
+            
                 <select name="" id="Persiennes-Jalouses" class="dmosuboptionOne"><!-- PERSIENNES/JALOUSES -->
                     <option value="">Choisir un type</option>
                     <option value="persiennes">PERSIENNES</option>
                     <option value="jalousies">JALOUSIES</option>
                 </select>
-            </div>
-            <div id="">
+            
                 <select name="" id="Portes-de-Garage" class="dmosuboptionOne"><!-- PORTES DE GARAGE -->
                     <option value="">Choisir un type</option>
                     <option value="sectionnelles-plafond">SECTIONNELLES PLAFOND</option>
@@ -174,8 +177,7 @@
                     <option value="refoulement-plafond">REFOULEMENT PLAFOND</option>
                     <option value="battantes">BATTANTES</option>
                 </select>
-            </div>
-            <div id="">
+            
                 <select name="" id="Stores" class="dmosuboptionOne"><!-- STORES -->
                     <option value="">Choisir un type</option>
                     <option value="bannes">BANNES</option>
@@ -183,7 +185,6 @@
                     <option value="droit-guides">DROITS GUIDES</option>
                 </select>
             </div>
-            <!-- </div>-->
             <section id="lesDMO">
                 <div id="pose-renovation-neuf" class="dmoQuest">
                     DIRECTIVE DE POSE: FENETRE PORTE - POSE RENOVATION / NEUF
@@ -249,10 +250,6 @@
                 </div>
                 <div id="20" class="dmoQuest"></div>
             </section>
-
-
-
-
         </div>
     </section>
     <script src="js/scriptarbre.js"></script>
